@@ -1,66 +1,118 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Project Name
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Description: This project is an e-commerce application developed using Laravel. It supports basic functions such as listing products, creating offers, and managing orders, and provides a RESTful API.
 
-## About Laravel
+## Table of Contents
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Design Patterns](#design-patterns)
+- [Scheduled Tasks and Console Commands](#scheduled-tasks-and-console-commands)
+- [Developer Notes](#developer-notes)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- User registration and login
+- Product listing, adding, and updating
+- Creating and updating offers
+- Creating, updating, and listing orders
+- Automatic data fetching and updating
+- Scheduled tasks and console commands
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Requirements:**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    - PHP >= 8.0
+    - Composer
+    - Docker & Docker Compose (for Laravel Sail usage)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. **Clone the Project:**
 
-## Laravel Sponsors
+   ```bash
+   git clone https://github.com/fatihes1/laravel-rest-api-docker-with-sail.git
+   cd laravel-rest-api-docker-with-sail
+    ```
+   
+3. **Install Dependencies:**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    ```bash
+    composer install
+    ```
+   
+4. **Copy Environment File:**
 
-### Premium Partners
+    ```bash
+    cp .env.example .env
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+5. **Configure Environment File:**
 
-## Contributing
+Open the .env file and configure the necessary settings (database, API keys, etc.)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. **Run Migrations and Seed:**
 
-## Code of Conduct
+    ```bash
+    php artisan migrate --seed
+    ```
+   
+7. **Start the Server with Laravel Sail:**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+    ./vendor/bin/sail up
+    ```
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+ ## Usage
 
-## License
+- User Registration: POST /register - Creates a new user.
+- User Login: POST /login - Logs in a user and returns a token.
+- Products: GET /products - Lists products.
+  - POST /products - Adds a new product.
+  - PUT /products/{id} - Updates an existing product.
+  - DELETE /products/{id} - Deletes a product.
+- Offers: GET /offers - Lists offers.
+  - POST /offers - Adds a new offer.
+  - PUT /offers/{id} - Updates an existing offer.
+  - DELETE /offers/{id} - Deletes an offer.
+- Orders: GET /orders - Lists orders.
+  - POST /orders - Creates a new order.
+  - PUT /orders/{id} - Updates an existing order.
+  - DELETE /orders/{id} - Deletes an order.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+## Design Patterns
+
+Design patterns used in this project:
+
+-   **Repository Pattern:** Database operations and queries are managed in Repository classes. This pattern enhances code reusability and simplifies database operations management.
+-   **Service Layer:** Business logic is handled in Service classes. This reduces the complexity of controllers and improves the testability of the code.
+-   **Facade Pattern:** Laravel's own Facade classes make it easier to access various components of the application.
+-   **Factory Pattern:** Used for dynamically creating database models.
+
+## Scheduled Tasks and Console Commands
+
+-   **Console Command:** A console command has been written to fetch data from the API. The command is located in the `app/Console/Commands` directory and can be run as follows:
+
+```bash
+php artisan app:fetch-order-command
+```
+or
+
+```bash
+./vendor/bin/sail artisan app:fetch-order-command
+```
+
+**Scheduled Task:** A scheduled task has been set up to run automatically on a weekly basis. The task is defined in the `app/Console/Kernel.php` file and fetches data from the API, ensuring it is processed.
+
+## Developer Notes
+
+-   **Rate Limiting:** Rate limiting is applied to API calls. In case of errors, the job is retried.
+-   **Exception Handling:** Custom error responses and exception handling are implemented for potential issues in the API.
+-   **Retry Mechanism:** If API calls fail, a retry mechanism is implemented to ensure the job is retried.
+
+
+
