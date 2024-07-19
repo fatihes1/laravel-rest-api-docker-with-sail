@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Order\OrderBaseResourceResource;
 use App\Repositories\OrderRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -16,26 +18,30 @@ class OrderController extends Controller
 
     public function index()
     {
-        return response()->json($this->orderRepository->all());
+        return OrderBaseResourceResource::collection($this->orderRepository->all());
     }
 
     public function show($id)
     {
-        return response()->json($this->orderRepository->find($id));
+        return new OrderBaseResourceResource($this->orderRepository->find($id));
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
         $order = $this->orderRepository->create($data);
-        return response()->json($order, 201);
+
+        return new OrderBaseResourceResource($order, 201);
     }
 
     public function update(Request $request, $id)
     {
         $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
         $order = $this->orderRepository->update($id, $data);
-        return response()->json($order);
+
+        return new OrderBaseResourceResource($order);
     }
 
     public function destroy($id)
