@@ -1,4 +1,4 @@
-# Project Name
+# REST API VIA LARAVEL (SAIL DOCKER)
 
 Description: This project is an e-commerce application developed using Laravel. It supports basic functions such as listing products, creating offers, and managing orders, and provides a RESTful API.
 
