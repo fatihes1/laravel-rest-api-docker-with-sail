@@ -4,33 +4,34 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\Order\OrderBaseResourceResource;
 use App\Repositories\OrderRepositoryInterface;
+use App\Services\OrderService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    protected OrderRepositoryInterface $orderRepository;
+    protected OrderService $orderService;
 
-    public function __construct(OrderRepositoryInterface $orderRepository)
+    public function __construct(OrderService $orderService)
     {
-        $this->orderRepository = $orderRepository;
+        $this->orderService = $orderService;
     }
 
     public function index()
     {
-        return OrderBaseResourceResource::collection($this->orderRepository->all());
+        return OrderBaseResourceResource::collection($this->orderService->getAllOrders());
     }
 
     public function show($id)
     {
-        return new OrderBaseResourceResource($this->orderRepository->find($id));
+        return new OrderBaseResourceResource($this->orderService->getOrderById($id));
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
-        $order = $this->orderRepository->create($data);
+        $order = $this->orderService->createOrder($data);
 
         return new OrderBaseResourceResource($order, 201);
     }
@@ -39,14 +40,14 @@ class OrderController extends Controller
     {
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
-        $order = $this->orderRepository->update($id, $data);
+        $order = $this->orderService->updateOrder($id, $data);
 
         return new OrderBaseResourceResource($order);
     }
 
     public function destroy($id)
     {
-        $deleted = $this->orderRepository->delete($id);
+        $deleted = $this->orderService->deleteOrder($id);
         return response()->json(null, $deleted ? 204 : 404);
     }
 }
