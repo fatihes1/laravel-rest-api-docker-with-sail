@@ -1,0 +1,1883 @@
+{
+	"info": {
+		"_postman_id": "2b86b459-ba48-49ea-a8f5-e2c9c6f50fa2",
+		"name": "Verde Inc.",
+		"description": "This is a case study for Verde Inc.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26799747",
+		"_collection_link": "https://takasla-unique-name.postman.co/workspace/Takasla~dc3e63ca-42df-4e59-9d7f-9aead1fa9a82/collection/26799747-2b86b459-ba48-49ea-a8f5-e2c9c6f50fa2?action=share&source=collection_link&creator=26799747"
+	},
+	"item": [
+		{
+			"name": "Mocky Endpoints",
+			"item": [
+				{
+					"name": "Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://run.mocky.io/v3/c448f769-ce16-4bb3-ad6f-44edb15cad08",
+						"description": "This request will list the products as dummy data. Here is an example product record:\n\n`{`\n\n`\"id\": 1,`\n\n`\"name\": \"Product A\",`\n\n`\"description\": \"Description of Product A\",`\n\n`\"price\": 29.99,`\n\n`\"stock\": 100,`\n\n`\"created_at\": \"2024-07-01T10:00:00Z\",`\n\n`\"updated_at\": \"2024-07-01T10:00:00Z\"`\n\n`}`,"
+					},
+					"response": []
+				},
+				{
+					"name": "Offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://run.mocky.io/v3/c3641475-28a5-4f04-9bdc-e402965134ea",
+						"description": "This request will list the offers as dummy data. Here is an example offer record:\n\n`{`\n\n`\"id\": 1,`\n\n`\"product_id\": 1,`\n\n`\"discount\": 10,`\n\n`\"start_date\": \"2024-07-01\",`\n\n`\"end_date\": \"2024-07-07\",`\n\n`\"created_at\": \"2024-07-01T10:00:00Z\",`\n\n`\"updated_at\": \"2024-07-01T10:00:00Z\"`\n\n`}`"
+					},
+					"response": []
+				},
+				{
+					"name": "Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://run.mocky.io/v3/42e1f728-4d08-4ed7-8e89-b26391c40c51",
+						"description": "This request will list the orders as dummy data. Here is an example orders record:\n\n`{`\n\n`\"id\": 1,`\n\n`\"customer_name\": \"John Doe\",`\n\n`\"customer_email\": \"`[<code>john.doe@example.com</code>](https://mailto:john.doe@example.com)`\",`\n\n`\"address\": \"123 Main St, Anytown, USA\",`\n\n`\"total_price\": 79.98,`\n\n`\"status\": \"Pending\",`\n\n`\"order_items\": [`\n\n`{ \"product_id\": 1, \"quantity\": 2, \"price\": 29.99 },`\n\n`{ \"product_id\": 2, \"quantity\": 1, \"price\": 49.99 } ],`\n\n`\"created_at\": \"2024-07-15T12:34:00Z\",`\n\n`\"updated_at\": \"2024-07-15T12:34:00Z\"`\n\n`}`"
+					},
+					"response": []
+				}
+			],
+			"description": "With mock data, we can manipulate our real life data as if we were pulling it from a service."
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Fatih\",\n    \"email\" : \"hi@fatihes.com\",\n    \"password\" : \"Fatih_1234\",\n    \"password_confirmation\" : \"Fatih_1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/register",
+						"description": "This request has been created for the purpose of registering to the system."
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Fatih\",\n    \"email\" : \"hi@fatihes.com\",\n    \"password\" : \"Fatih_1234\",\n    \"password_confirmation\" : \"Fatih_1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/register"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:52:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"name\": \"Fatih\",\n        \"email\": \"hi@fatihes.com\",\n        \"updated_at\": \"2024-07-19T06:52:31.000000Z\",\n        \"created_at\": \"2024-07-19T06:52:31.000000Z\",\n        \"id\": 2\n    },\n    \"message\": \"User created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json();",
+									"pm.environment.set(\"ACCESS_TOKEN\", data.data.token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"me@fatihes.com\",\n    \"password\" : \"Fatih_1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/login",
+						"description": "This request has been created for the purpose of logining to the system."
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"me@fatihes.com\",\n    \"password\" : \"Fatih_1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:52:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"token\": \"23|TVrRUXo1Ozry9opgXW1Smal5du4gWfmO1yVviiux0e120967\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Fatih\",\n            \"email\": \"me@fatihes.com\"\n        }\n    },\n    \"message\": \"User logged in successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/logout"
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/logout"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:52:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"message\": \"Successfully logged out\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/products"
+					},
+					"response": [
+						{
+							"name": "Get All Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/products"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:50:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Dummy Product\",\n            \"description\": \"Dummy Product Description\",\n            \"price\": \"15.99\",\n            \"stock\": 12\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Dummy Product Via Postman\",\n            \"description\": \"Dummy Product Via Postman Description\",\n            \"price\": \"25.50\",\n            \"stock\": 58\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Product By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/products/65"
+					},
+					"response": [
+						{
+							"name": "Get Product By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/products/65"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 08:31:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "97"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 65,\n        \"name\": \"Product A\",\n        \"description\": \"Description of Product A\",\n        \"price\": \"29.99\",\n        \"stock\": 100\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create A Product",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Dummy Product Via Postman\",\n    \"description\" : \"Dummy Product Via Postman Description\",\n    \"price\" : 25.50,\n    \"stock\" : 58\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/products"
+					},
+					"response": [
+						{
+							"name": "Create A Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Dummy Product Via Postman\",\n    \"description\" : \"Dummy Product Via Postman Description\",\n    \"price\" : 25.50,\n    \"stock\" : 58\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/products"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 08:31:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 75,\n        \"name\": \"Dummy Product Via Postman\",\n        \"description\": \"Dummy Product Via Postman Description\",\n        \"price\": 25.5,\n        \"stock\": 58\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update A Product",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\" : 35.50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/products/76"
+					},
+					"response": [
+						{
+							"name": "Update A Product",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"price\" : 35.50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/products/75"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 08:32:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 75,\n        \"name\": \"Dummy Product Via Postman\",\n        \"description\": \"Dummy Product Via Postman Description\",\n        \"price\": 35.5,\n        \"stock\": 58\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete A Product",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/products/76"
+					},
+					"response": [
+						{
+							"name": "Delete A Product",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/products/4"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:52:14 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "96"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Offers",
+			"item": [
+				{
+					"name": "Get All Offers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/offers"
+					},
+					"response": [
+						{
+							"name": "Get All Offers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/offers"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:53:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "200"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "199"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"product_id\": 1,\n            \"discount\": 5,\n            \"start_date\": \"2024-07-18\",\n            \"end_date\": \"2024-07-31\"\n        },\n        {\n            \"id\": 3,\n            \"product_id\": 3,\n            \"discount\": 10,\n            \"start_date\": \"2024-07-18\",\n            \"end_date\": \"2024-08-01\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Offer By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/offers/1"
+					},
+					"response": [
+						{
+							"name": "Get Offer By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/offers/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:53:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "200"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "196"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"product_id\": 1,\n        \"discount\": 5,\n        \"start_date\": \"2024-07-18\",\n        \"end_date\": \"2024-07-31\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create A Offer",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 1,\n    \"discount\": 10,\n    \"start_date\" : \"2024-07-19\",\n    \"end_date\" : \"2024-08-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/offers"
+					},
+					"response": [
+						{
+							"name": "Create A Offer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_id\": 1,\n    \"discount\": 10,\n    \"start_date\" : \"2024-07-19\",\n    \"end_date\" : \"2024-08-01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/offers"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:53:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "200"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "197"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"product_id\": 1,\n        \"discount\": 10,\n        \"start_date\": \"2024-07-19\",\n        \"end_date\": \"2024-08-01\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update A Offer",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"discount\": 11,\n    \"start_date\" : \"2024-07-20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/offers/3"
+					},
+					"response": [
+						{
+							"name": "Update A Offer",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"discount\": 11,\n    \"start_date\" : \"2024-07-20\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/offers/5"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:53:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "200"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "194"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"product_id\": 1,\n        \"discount\": 11,\n        \"start_date\": \"2024-07-20\",\n        \"end_date\": \"2024-08-01\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete A Offer",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/offers/5"
+					},
+					"response": [
+						{
+							"name": "Delete A Offer",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/offers/5"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:54:10 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "200"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "193"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get All Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/orders"
+					},
+					"response": [
+						{
+							"name": "Get All Orders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/orders"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:54:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "499"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"customer_name\": \"Fatih\",\n            \"customer_email\": \"me@fatihes.com\",\n            \"address\": \"221B Baker Street 2\",\n            \"total_price\": \"68.85\",\n            \"status\": \"Shipped\",\n            \"order_items\": [\n                {\n                    \"product_id\": 3,\n                    \"quantity\": 3,\n                    \"price\": \"22.95\"\n                }\n            ],\n            \"created_at\": \"2024-07-19T05:38:19.000000Z\",\n            \"updated_at\": \"2024-07-19T06:04:26.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"customer_name\": \"Fatih\",\n            \"customer_email\": \"me@fatihes.com\",\n            \"address\": \"221B Baker Street 2\",\n            \"total_price\": \"68.85\",\n            \"status\": \"Shipped\",\n            \"order_items\": [\n                {\n                    \"product_id\": 3,\n                    \"quantity\": 3,\n                    \"price\": \"22.95\"\n                }\n            ],\n            \"created_at\": \"2024-07-19T05:38:46.000000Z\",\n            \"updated_at\": \"2024-07-19T05:45:06.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"customer_name\": \"Fatih\",\n            \"customer_email\": \"me@fatihes.com\",\n            \"address\": \"221B Baker Street\",\n            \"total_price\": \"99.23\",\n            \"status\": \"Pending\",\n            \"order_items\": [\n                {\n                    \"product_id\": 1,\n                    \"quantity\": 2,\n                    \"price\": \"15.19\"\n                },\n                {\n                    \"product_id\": 3,\n                    \"quantity\": 3,\n                    \"price\": \"22.95\"\n                }\n            ],\n            \"created_at\": \"2024-07-19T06:04:33.000000Z\",\n            \"updated_at\": \"2024-07-19T06:04:33.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"customer_name\": \"Fatih\",\n            \"customer_email\": \"me@fatihes.com\",\n            \"address\": \"221B Baker Street\",\n            \"total_price\": \"99.23\",\n            \"status\": \"Pending\",\n            \"order_items\": [\n                {\n                    \"product_id\": 1,\n                    \"quantity\": 2,\n                    \"price\": \"15.19\"\n                },\n                {\n                    \"product_id\": 3,\n                    \"quantity\": 3,\n                    \"price\": \"22.95\"\n                }\n            ],\n            \"created_at\": \"2024-07-19T06:05:05.000000Z\",\n            \"updated_at\": \"2024-07-19T06:05:05.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Order By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/orders/4"
+					},
+					"response": [
+						{
+							"name": "Get Order By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/orders/4"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:54:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "495"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"customer_name\": \"Fatih\",\n        \"customer_email\": \"me@fatihes.com\",\n        \"address\": \"221B Baker Street 2\",\n        \"total_price\": \"68.85\",\n        \"status\": \"Shipped\",\n        \"order_items\": [\n            {\n                \"product_id\": 3,\n                \"quantity\": 3,\n                \"price\": \"22.95\"\n            }\n        ],\n        \"created_at\": \"2024-07-19T05:38:19.000000Z\",\n        \"updated_at\": \"2024-07-19T06:04:26.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create A Order",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\" : \"221B Baker Street\",\n    \"order_items\" : [\n        {\n            \"product_id\" : 1,\n            \"quantity\" : 2\n        },\n        {\n            \"product_id\" : 3,\n            \"quantity\" : 3\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/orders"
+					},
+					"response": [
+						{
+							"name": "Create A Order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\" : \"221B Baker Street\",\n    \"order_items\" : [\n        {\n            \"product_id\" : 1,\n            \"quantity\" : 2\n        },\n        {\n            \"product_id\" : 3,\n            \"quantity\" : 3\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/orders"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:55:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "493"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 9,\n        \"customer_name\": \"Fatih\",\n        \"customer_email\": \"me@fatihes.com\",\n        \"address\": \"221B Baker Street\",\n        \"total_price\": 136.3,\n        \"status\": \"Pending\",\n        \"order_items\": [\n            {\n                \"product_id\": 1,\n                \"quantity\": 2,\n                \"price\": \"33.73\"\n            },\n            {\n                \"product_id\": 3,\n                \"quantity\": 3,\n                \"price\": \"22.95\"\n            }\n        ],\n        \"created_at\": \"2024-07-19T06:55:03.000000Z\",\n        \"updated_at\": \"2024-07-19T06:55:03.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update A Order",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\" : \"221B Baker Street 2\",\n    \"status\" : \"Shipped\",\n    \"order_items\" : [\n        {\n            \"product_id\" : 3,\n            \"quantity\" : 3\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/orders/5"
+					},
+					"response": [
+						{
+							"name": "Update A Order",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\" : \"221B Baker Street 2\",\n    \"status\" : \"Shipped\",\n    \"order_items\" : [\n        {\n            \"product_id\" : 3,\n            \"quantity\" : 3\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/orders/5"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:55:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "492"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"customer_name\": \"Fatih\",\n        \"customer_email\": \"me@fatihes.com\",\n        \"address\": \"221B Baker Street 2\",\n        \"total_price\": 68.85,\n        \"status\": \"Shipped\",\n        \"order_items\": [\n            {\n                \"product_id\": 3,\n                \"quantity\": 3,\n                \"price\": \"22.95\"\n            }\n        ],\n        \"created_at\": \"2024-07-19T05:38:46.000000Z\",\n        \"updated_at\": \"2024-07-19T06:55:11.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete A Order",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{ACCESS_TOKEN}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:80/api/orders/8"
+					},
+					"response": [
+						{
+							"name": "Delete A Offer Copy",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:80/api/orders/8"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:80"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jul 2024 06:55:28 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "491"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "ACCESS_TOKEN",
+			"value": "\"\""
+		}
+	]
+}

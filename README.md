@@ -82,6 +82,10 @@ Open the .env file and configure the necessary settings (database, API keys, etc
   - DELETE /orders/{id} - Deletes an order.
 
 
+You can also check the API documentation by visiting the `./Verde Inc..postman_collection.json` file.
+
+
+```bash
 
 
 ## Design Patterns
