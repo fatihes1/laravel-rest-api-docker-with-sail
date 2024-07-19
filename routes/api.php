@@ -12,7 +12,14 @@ Route::post('login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('logout', [AuthController::class, 'logout']);
-    Route::apiResource('products', ProductController::class);
-    Route::apiResource('offers', OfferController::class);
-    Route::apiResource('orders', OrderController::class);
+
+    Route::middleware('throttle:products')->group(function () {
+        Route::apiResource('products', ProductController::class);
+    });
+    Route::middleware('throttle:offers')->group(function () {
+        Route::apiResource('offers', OfferController::class);
+    });
+    Route::middleware('throttle:orders')->group(function () {
+        Route::apiResource('orders', OrderController::class);
+    });
 });
