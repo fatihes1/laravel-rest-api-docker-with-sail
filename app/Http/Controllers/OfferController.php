@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Offer\OfferBaseResource;
 use App\Repositories\OfferRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -16,26 +17,26 @@ class OfferController extends Controller
 
     public function index()
     {
-        return response()->json($this->offerRepository->all());
+        return OfferBaseResource::collection($this->offerRepository->all());
     }
 
     public function show($id)
     {
-        return response()->json($this->offerRepository->find($id));
+        return new OfferBaseResource($this->offerRepository->find($id));
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
         $offer = $this->offerRepository->create($data);
-        return response()->json($offer, 201);
+        return new OfferBaseResource($offer, 201);
     }
 
     public function update(Request $request, $id)
     {
         $data = $request->all();
         $offer = $this->offerRepository->update($id, $data);
-        return response()->json($offer);
+        return new OfferBaseResource($offer);
     }
 
     public function destroy($id)
