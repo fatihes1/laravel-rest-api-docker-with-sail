@@ -3,5 +3,5 @@
 return [
     App\Providers\AppServiceProvider::class,
     App\Providers\RepositoryServiceProvider::class,
-    App\Providers\RouterServiceProvider::class,
+    App\Providers\RouteServiceProvider::class,
 ];
