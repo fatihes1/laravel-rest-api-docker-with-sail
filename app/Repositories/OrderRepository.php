@@ -6,20 +6,22 @@ use App\Models\Offer;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class OrderRepository implements OrderRepositoryInterface
 {
-    public function all()
+    public function all(): Collection
     {
         return Order::with('orderItems', 'user')->get();
     }
 
-    public function find($id)
+    public function find($id): ?Order
     {
-        return Order::with('orderItems', 'user')->find($id);
+        return Order::with('orderItems', 'user')->findOrFail($id);
     }
 
-    public function create(array $data)
+    public function create(array $data): Order
     {
         $order = Order::create([
             'user_id' => $data['user_id'],
@@ -60,9 +62,9 @@ class OrderRepository implements OrderRepositoryInterface
 
     }
 
-    public function update($id, array $data)
+    public function update($id, array $data): Order
     {
-        $order = Order::findOrFail($id);
+        $order = $this->find($id);
 
         $order->update([
             'user_id' => $data['user_id'],
@@ -108,7 +110,7 @@ class OrderRepository implements OrderRepositoryInterface
         return $order->load('orderItems', 'user');
     }
 
-    public function delete($id)
+    public function delete($id): bool
     {
         $order = Order::find($id);
         if ($order) {
