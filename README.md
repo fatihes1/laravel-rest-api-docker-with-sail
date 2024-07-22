@@ -64,7 +64,7 @@ Open the .env file and configure the necessary settings (database, API keys, etc
     ```
 
 
- ## Usage
+## Usage
 
 - User Registration: POST /register - Creates a new user.
 - User Login: POST /login - Logs in a user and returns a token.
@@ -84,8 +84,6 @@ Open the .env file and configure the necessary settings (database, API keys, etc
 
 You can also check the API documentation by visiting the `./Verde Inc..postman_collection.json` file.
 
-
-```bash
 
 
 ## Design Patterns
